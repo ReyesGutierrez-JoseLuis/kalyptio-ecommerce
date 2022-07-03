@@ -36,9 +36,9 @@ const CartScreen = () => {
       .toFixed(2);
   };
   */
-  
+
   //Funciones para el descuento
-   const getCartSubTotal = () => {
+  /*   const getCartSubTotal = () => {
     return cartItems
       .reduce((price, item) => {
         if(item.name==="Kalyptio-Pen"){
@@ -51,6 +51,8 @@ const CartScreen = () => {
           // aplicar descuento 25% a partir de 3 T-shirts
           if(item.qty>=3) {
             price = (item.qty * item.price) * .75;
+           } else {
+            price = (item.qty * item.price);
            }
 
         }
@@ -59,7 +61,74 @@ const CartScreen = () => {
       },0)
       .toFixed(2);
   };
- 
+ */
+  // const getCartSubTotal = () => {
+  //   let penTotal = 0;
+  //   let shirtTotal = 0;
+  //   let mugTotal = 0;
+  //   let subTotal = 0;
+
+  //   return cartItems.map((item) => {
+  //     if (item.name === "Kalyptio-Pen") {
+  //       // aplicar descuento 3*2
+  //       if (item.qty >= 3) {
+  //         penTotal = (item.qty - 1) * item.price;
+  //       } else {
+  //         penTotal = item.qty * item.price;
+  //       }
+  //     }
+  //     if (item.name === "Kalypto-T-shirt") {
+  //       // aplicar descuento 25% a partir de 3 T-shirts
+  //       if (item.qty >= 3) {
+  //         shirtTotal = item.qty * item.price * 0.75;
+  //       } else {
+  //         shirtTotal = item.qty * item.price;
+  //       }
+  //     }
+  //     if (item.name === "Kalyptio-Coffee-Mug") {
+  //       mugTotal = item.qty * item.price;
+  //     }
+
+  //     subTotal = penTotal + shirtTotal + mugTotal;
+  //     return subTotal;
+  //   });
+  // };
+
+  const getCartSubTotal = () => {
+    let penTotal = 0;
+    let shirtTotal = 0;
+    let mugTotal = 0;
+    let subTotal = 0;
+    return cartItems.map((item) => {
+      switch (item.name) {
+        case "Kalyptio-Pen":
+          // aplicar descuento 3*2
+          if (item.qty >= 3) {
+            penTotal = (item.qty - 1) * item.price;
+          } else {
+            penTotal = item.qty * item.price;
+          }
+          break;
+
+        case "Kalypto-T-shirt":
+          // aplicar descuento 3*2
+          if (item.qty >= 3) {
+            shirtTotal = item.qty * item.price * 0.75;
+          } else {
+            shirtTotal = item.qty * item.price;
+          }
+          break;
+        case "Kalyptio-Coffee-Mug":
+          mugTotal = item.qty * item.price;
+          break;
+
+        default:
+          break;
+      }
+      subTotal = penTotal + shirtTotal + mugTotal;
+      return subTotal;
+    });
+  };
 
   return (
     <>
