@@ -1,6 +1,7 @@
 import "./Product.css";
 import { Link } from "react-router-dom";
 
+//estructura de los productos
 const Product = ({ imageUrl, description, price, name, productId }) => {
   return (
     <div className="product">

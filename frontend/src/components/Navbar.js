@@ -10,6 +10,7 @@ const Navbar = ({ click }) => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
 
+  //Barra de navegación
   return (
     <nav className="navbar">
       <div className="navbar__logo">

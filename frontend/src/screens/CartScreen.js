@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-// Components
+// Componentes
 import CartItem from "../components/CartItem";
 
 // Actions
@@ -40,7 +40,7 @@ const CartScreen = () => {
   //Funciones para el descuento
    const getCartSubTotal = () => {
     return cartItems
-      .reduce((price, item, total) => {
+      .reduce((price, item) => {
         if(item.name==="Kalyptio-Pen"){
           // aplicar descuento 3*2
          if(item.qty>=3) {
@@ -54,7 +54,7 @@ const CartScreen = () => {
            }
 
         }
-        
+
         return price// regresa el total con descuentos aplicados
       },0)
       .toFixed(2);
