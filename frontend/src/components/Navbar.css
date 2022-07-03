@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  background-color: #171717;
+  background-color: #06283D;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,7 +39,7 @@
 }
 
 .cart__link {
-  background: #333;
+  background: #1363DF;
   padding: 10px;
   border-radius: 8px;
 }
