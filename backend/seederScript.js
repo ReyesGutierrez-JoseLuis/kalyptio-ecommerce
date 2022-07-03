@@ -4,6 +4,7 @@ const productData = require("./data/products");
 const connectDB = require("./config/db");
 const Product = require("./models/Product");
 
+//Script para rellenar la base de datos con los productos
 connectDB();
 
 const importData = async () => {
