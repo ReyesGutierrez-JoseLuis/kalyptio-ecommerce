@@ -12,3 +12,10 @@ Kalyptio has come to the conclusion that users are very likely to buy awesome Ka
 
 ---
 
+El proyecto esta funcionando en mi CLuster de mongo atlas 
+
+Instalar los paquetes de node con npm install en la raiz del proyecto
+Instalar los paquetes de node con npm install en la carpeta frontend
+
+Inicializar el backend con el comando yarn server en la raiz del proyecto
+Inicializar el frontend con el comando yarn star en la carpeta del frontend
