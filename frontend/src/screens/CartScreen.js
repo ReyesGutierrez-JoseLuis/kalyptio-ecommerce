@@ -125,7 +125,7 @@ const CartScreen = () => {
         default:
           break;
       }
-      subTotal = penTotal + shirtTotal + mugTotal;
+      subTotal = (penTotal + shirtTotal + mugTotal);
       return subTotal;
     });
   };
