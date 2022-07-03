@@ -29,32 +29,36 @@ const CartScreen = () => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
   };
 
+  /* 
    const getCartSubTotal = () => {
     return cartItems
       .reduce((price, item) => price + item.price * item.qty, 0)
       .toFixed(2);
   };
-
+  */
   
   //Funciones para el descuento
-   /* const getCartSubTotal2 = () => {
+   const getCartSubTotal = () => {
     return cartItems
       .reduce((price, item) => {
         if(item.name==="Kalyptio-Pen"){
           // aplicar descuento 3*2
          if(item.qty>=3) {
-
+          parseInt((item.qty) - 1);
+          price = (item.qty -1 )* item.price;
          }
         }
         if(item.name==="camisa"){
-          // aplicar descuento 20% a cada uno
+          // aplicar descuento 25% a partir de 3 T-shirts
+          
+
         }
 
-return price// regresa el total con descuentos aplicados
+        return price// regresa el total con descuentos aplicados
       },0)
       .toFixed(2);
   };
-   */
+ 
 
   return (
     <>
