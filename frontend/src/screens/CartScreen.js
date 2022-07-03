@@ -40,20 +40,21 @@ const CartScreen = () => {
   //Funciones para el descuento
    const getCartSubTotal = () => {
     return cartItems
-      .reduce((price, item) => {
+      .reduce((price, item, total) => {
         if(item.name==="Kalyptio-Pen"){
           // aplicar descuento 3*2
          if(item.qty>=3) {
-          parseInt((item.qty) - 1);
           price = (item.qty -1 )* item.price;
          }
         }
-        if(item.name==="camisa"){
+        if(item.name==="Kalypto-T-shirt"){
           // aplicar descuento 25% a partir de 3 T-shirts
-          
+          if(item.qty>=3) {
+            price = (item.qty * item.price) * .75;
+           }
 
         }
-
+        
         return price// regresa el total con descuentos aplicados
       },0)
       .toFixed(2);
